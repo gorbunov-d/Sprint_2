@@ -21,9 +21,8 @@ class PointsForMeters:
         return points
 
 class TotalPoints(PointsForPlace, PointsForMeters):
-    @staticmethod
-    def get_total_points(meters, place):
-        total = PointsForPlace.get_points_for_place(place) + PointsForMeters.get_points_for_meters(meters)
+    def get_total_points(self, meters, place): # сделал метод обычным
+        total = self.get_points_for_place(place) + self.get_points_for_meters(meters)
         return total
 
 points_for_place = PointsForPlace()
